@@ -1,21 +1,177 @@
+:root {
+  /* colors */
+  --white: #ffffff;
+  --main-blue: #113343;
+  --main-green: #71b68a;
+  --light-green: #8ed8a9;
+  --main-orange: #f35a39;
+  --dark-orange: #ec6b4e;
+  --lemon: #fbf2c0;
+  --mocha: #7f4f24;
+  --tan: #ddb892;
+  --blue: #3e80b6;
+  /* fonts */
+  --decorative: "Montserrat", sans-serif;
+  --sans: "Open Sans", sans-serif;
+  /* font scale */
+  --base-size: 1.25rem;
+  --scale: 1.25;
+  --xl: calc(var(--h1) * var(--scale) * var(--scale)); /* 7.15rem */
+  --lg: calc(var(--h1) * var(--scale)); /* 4.575rem */
+  --h1: calc(var(--h2) * var(--scale)); /* 3.66rem */
+  --h2: calc(var(--h3) * var(--scale)); /* 2.93rem */
+  --h3: calc(var(--h4) * var(--scale)); /* 2.34rem */
+  --h4: calc(var(--h5) * var(--scale)); /* 1.875rem */
+  --h5: calc(var(--h6) * var(--scale)); /* 1.5rem */
+  --h6: var(--base-size); /* 1.2rem */
+  --small: calc(var(--base-size) / var(--scale)); /* 0.96rem */
+  --xsmall: calc(var(--base-size) / (var(--scale) * var(--scale)));
+  /* other variables */
+  --radius: 7.5px;
+}
+
+/* add border box sizing to the page right from the start */
+html {
+  box-sizing: border-box;
+  min-width: 360px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  line-height: 1.5;
+  font-size: var(--base-size);
+  padding: 0;
+  margin: 0;
+  min-width: 360px;
+}
+
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
+  font-weight: 500;
+  font-family: var(--decorative);
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-size: var(--h1);
+  line-height: 1;
+  margin-bottom: var(--h2);
+}
+
+h2,
+.h2 {
+  font-size: var(--h2);
+  line-height: 1.1;
+  margin-bottom: var(--h3);
+}
+
+h3,
+.h3 {
+  font-size: var(--h3);
+  line-height: 1.2;
+  margin-bottom: var(--h4);
+}
+
+img {
+  max-width: 100%;
+  border-radius: var(--radius);
+}
+
+figure {
+  margin: 0;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+html {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 main {
   min-height: 80vh;
 }
 
 .header {
-  width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  border-bottom: 1.5px solid #d1d1d1;
-  background-color: #1d1d1d;
+  background-color: var(--main-blue);
   color: #d1d1d1;
 }
+.header nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--base-size) 12.5vw;
+}
+.header .nav-brand {
+  color: var(--white);
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+  gap: 1rem;
+}
+.header .nav-brand__img {
+  min-height: 3rem;
+  min-width: 3rem;
+  color: var(--main-green);
+}
+.header .nav-brand:hover .nav-brand__img {
+  color: var(--light-green);
+}
+.header .nav-brand .h3 {
+  margin-bottom: 0;
+}
+.header .nav-btn {
+  background-color: var(--main-orange);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  white-space: nowrap;
+  padding: var(--xsmall) var(--h2);
+}
+.header .nav-btn:hover {
+  background-color: var(--dark-orange);
+}
+.header .nav-btn__img {
+  height: var(--h3);
+  width: var(--h3);
+}
+.header .nav-btn__add {
+  color: var(--white);
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  cursor: pointer;
+}
 
+@media screen and (max-width: 890px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
 .footer {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  width: 100%;
   margin: 0 auto;
   margin-bottom: 0;
   padding: 2rem;
