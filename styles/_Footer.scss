@@ -1,0 +1,24 @@
+.footer {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 0;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1.5px solid #d1d1d1;
+  background-color: #1d1d1d;
+  color: #d1d1d1;
+  a {
+    color: #87a7a4;
+    &:hover {
+      color: #16f3eb;
+    }
+    &.footer-icon {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
