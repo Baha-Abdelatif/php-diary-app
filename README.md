@@ -38,7 +38,7 @@ Replace all the values with your own to connect with your db.
 
 ---
 
-You may need some dummies data to create your table, you can use the "diary.sql" file and import it with PhpMyAdmin or another SQL DBMS.
+You may need some dummies data to create your table, you can use the "entries.sql" file and import it with PhpMyAdmin or another SQL DBMS.
 
 ---
 
@@ -46,7 +46,7 @@ You may need some dummies data to create your table, you can use the "diary.sql"
 
 Alternatively, you can view a demo at the following address:
 
-[https://php-diary-app-38e644e8b8e7.herokuapp.com/](https://php-diary-app-38e644e8b8e7.herokuapp.com/)
+[https://php-diary-app-ff4aec42cc4e.herokuapp.com/](https://php-diary-app-ff4aec42cc4e.herokuapp.com/)
 
 ## Contributions
 

@@ -22,8 +22,6 @@ try {
   $pdo = new PDO("mysql:host=$db_host;dbname=$db_db;charset=$db_charset", $db_user, $db_pass, [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
   ]);
-  $stmt = $pdo->prepare("SELECT * FROM `entries` ORDER BY `id` ASC");
-  $stmt->execute();
 } catch (PDOException $e) {
   // var_dump($e->getMessage());
   echo 'A problem occured with the database connection...';

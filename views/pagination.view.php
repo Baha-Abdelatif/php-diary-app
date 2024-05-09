@@ -1,0 +1,17 @@
+<ul class="pagination">
+  <li class="pagination__li">
+    <a class="pagination__link" href="#">⏴</a>
+  </li>
+  <li class="pagination__li">
+    <a class="pagination__link pagination__link--active" href="#">1</a>
+  </li>
+  <li class="pagination__li">
+    <a class="pagination__link" href="#">2</a>
+  </li>
+  <li class="pagination__li">
+    <a class="pagination__link" href="#">3</a>
+  </li>
+  <li class="pagination__li">
+    <a class="pagination__link" href="#">⏵</a>
+  </li>
+</ul>
