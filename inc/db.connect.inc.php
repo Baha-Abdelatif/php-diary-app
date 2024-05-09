@@ -25,13 +25,7 @@ try {
   $stmt = $pdo->prepare("SELECT * FROM `entries` ORDER BY `id` ASC");
   $stmt->execute();
 } catch (PDOException $e) {
-  var_dump($e->getMessage());
+  // var_dump($e->getMessage());
   echo 'A problem occured with the database connection...';
   die();
 }
-?>
-<pre>
-<?php while (($result = $stmt->fetch(PDO::FETCH_ASSOC)) !== false) : ?>
-    <p><?php var_dump($result) ?></p>
-  <?php endwhile; ?>
-</pre>
