@@ -6,9 +6,9 @@ if (!empty($_POST["title"]) && !empty($_POST["date"]) && !empty($_POST["message"
   $entered_message = (string) $_POST["message"] ?? "";
   $entered_date = (string) $_POST["date"] ?? "";
   $stmt = $pdo->prepare('INSERT INTO `entries` (`title`, `message`,`date`) VALUES (:enteredtitle, :enteredmessage, :entereddate)');
-  $stmt->bindParam('enteredtitle', $entered_title);
-  $stmt->bindParam('enteredmessage', $entered_message);
-  $stmt->bindParam('entereddate', $entered_date);
+  $stmt->bindValue('enteredtitle', $entered_title);
+  $stmt->bindValue('enteredmessage', $entered_message);
+  $stmt->bindValue('entereddate', $entered_date);
   $stmt->execute();
 }
 

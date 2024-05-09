@@ -26,11 +26,11 @@ Or you can use this model to see credentials needed and create your own file:
 
 ```bash
 
-NOTES_APP_HOST=your.database.url
-NOTES_APP_PORT=1234
-NOTES_APP_DB=your_database_name
-NOTES_APP_DBUSER=your_database_username
-NOTES_APP_DBPASS=your_database_password
+DIARY_APP_HOST=your.database.url
+DIARY_APP_PORT=1234
+DIARY_APP_DB=your_database_name
+DIARY_APP_DBUSER=your_database_username
+DIARY_APP_DBPASS=your_database_password
 
 ```
 

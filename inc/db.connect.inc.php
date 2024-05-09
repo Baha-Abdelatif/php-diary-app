@@ -13,10 +13,10 @@ if (str_starts_with($_SERVER['HTTP_HOST'], 'localhost')) {
 }
 
 $db_charset = "utf8mb4";
-$db_host = getenv("NOTES_APP_HOST");
-$db_db = getenv("NOTES_APP_DB");
-$db_user = getenv("NOTES_APP_DBUSER");
-$db_pass = getenv("NOTES_APP_DBPASS");
+$db_host = getenv("DIARY_APP_HOST");
+$db_db = getenv("DIARY_APP_DB");
+$db_user = getenv("DIARY_APP_DBUSER");
+$db_pass = getenv("DIARY_APP_DBPASS");
 
 try {
   $pdo = new PDO("mysql:host=$db_host;dbname=$db_db;charset=$db_charset", $db_user, $db_pass, [
