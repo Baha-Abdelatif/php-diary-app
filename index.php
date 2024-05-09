@@ -8,7 +8,8 @@ $images_arr = [
   "pexels-lumn-167682.jpg",
   "pexels-tranmautritam-68761.jpg",
 ];
-$stmt = $pdo->prepare("SELECT * FROM `entries` ORDER BY `id` ASC");
+
+$stmt = $pdo->prepare("SELECT * FROM `entries` ORDER BY `id` DESC");
 $stmt->execute();
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>

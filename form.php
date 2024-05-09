@@ -1,20 +1,31 @@
-<?php readfile(__DIR__ . "/views/header.view.html") ?>
-<?php require_once __DIR__ . "/inc/functions.php"; ?>
-<?php require_once __DIR__ . "/inc/db.connect.inc.php"; ?>
-<h1 class="main-heading">New Entry</h1>
+<?php readfile(__DIR__ . "/views/header.view.html");
+require_once __DIR__ . "/inc/functions.php";
+require_once __DIR__ . "/inc/db.connect.inc.php";
+if (!empty($_POST["title"]) && !empty($_POST["date"]) && !empty($_POST["message"])) {
+  $entered_title = (string) $_POST["title"] ?? "";
+  $entered_message = (string) $_POST["message"] ?? "";
+  $entered_date = (string) $_POST["date"] ?? "";
+  $stmt = $pdo->prepare('INSERT INTO `entries` (`title`, `message`,`date`) VALUES (:enteredtitle, :enteredmessage, :entereddate)');
+  $stmt->bindParam('enteredtitle', $entered_title);
+  $stmt->bindParam('enteredmessage', $entered_message);
+  $stmt->bindParam('entereddate', $entered_date);
+  $stmt->execute();
+}
 
+?>
+<h1 class="main-heading">New Entry</h1>
 <form method="POST" action="form.php">
   <div class="form-group">
     <label class="form-group__label" for="title">Title:</label>
-    <input class="form-group__input" type="text" id="title" name="title" />
+    <input required class="form-group__input" type="text" id="title" name="title" />
   </div>
   <div class="form-group">
     <label class="form-group__label" for="date">Date:</label>
-    <input class="form-group__input" type="date" id="date" name="date" />
+    <input required class="form-group__input" type="date" id="date" name="date" />
   </div>
   <div class="form-group">
     <label class="form-group__label" for="message">Message:</label>
-    <textarea class="form-group__input" id="message" name="message" rows="6"></textarea>
+    <textarea required class="form-group__input" id="message" name="message" rows="6"></textarea>
   </div>
   <div class="form-submit">
     <button class="button">
