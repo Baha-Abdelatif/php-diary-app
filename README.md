@@ -38,7 +38,7 @@ Replace all the values with your own to connect with your db.
 
 ---
 
-You may need some dummies data to create your table, you can use the "entries.sql" file and import it with PhpMyAdmin or another SQL DBMS.
+You may need some dummies data to fill your table, you can use the "entries.sql" file and import it with PhpMyAdmin or another SQL DBMS.
 
 ---
 

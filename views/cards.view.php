@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card__image-container">
-    <img class="card__image" src="images/<?php e($images_arr[$result['id'] - 1]); ?>" alt="" />
+    <img class="card__image" src="<?php e($result['img_url']); ?>" alt="" />
   </div>
   <div class="card__desc-container">
     <div class="card__desc-time">

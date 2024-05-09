@@ -2,14 +2,8 @@
 <?php require_once __DIR__ . "/inc/functions.php"; ?>
 <?php require_once __DIR__ . "/inc/db.connect.inc.php"; ?>
 <?php
-$images_arr = [
-  "pexels-canva-studio-3153199.jpg",
-  "pexels-kaushal-moradiya-2781195.jpg",
-  "pexels-lumn-167682.jpg",
-  "pexels-tranmautritam-68761.jpg",
-];
 
-$perPage = (int) 3;
+$perPage = (int) 5;
 $current_page = (int) ($_GET['page'] ?? 1);
 $offset = (int) ($current_page - 1) * $perPage;
 
