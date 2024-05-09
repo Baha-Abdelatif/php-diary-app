@@ -1,17 +1,18 @@
 <?php readfile(__DIR__ . "/views/header.html") ?>
 <?php require_once __DIR__ . "/inc/functions.php"; ?>
 <?php
-$entries = [
+$dummy_entries = [
   "images/pexels-canva-studio-3153199.jpg",
   "images/pexels-tranmautritam-68761.jpg",
   "images/pexels-lumn-167682.jpg",
   "images/pexels-kaushal-moradiya-2781195.jpg",
 ]
 ?>
+<?php require_once __DIR__ . "/inc/db.connect.inc.php"; ?>
 <div class="container">
   <h1 class="main-heading">Entries</h1>
 
-  <?php foreach ($entries as $entry) : ?>
+  <?php foreach ($dummy_entries as $entry) : ?>
     <div class="card">
       <div class="card__image-container">
         <img class="card__image" src="<?php e($entry); ?>" alt="" />
