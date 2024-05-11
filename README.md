@@ -7,7 +7,7 @@ Created with PHP as part of my preparation for the "Fullstack Web & Mobile Appli
 
 ## Setup
 
-This site uses PHP and Sass.
+This site uses PHP, Composer and Sass.
 It is therefore necessary to compile the SCSS code by running:
 
 ```bash
@@ -20,7 +20,19 @@ In the root project folder, in order to obtain CSS code that can be understood b
 
 ---
 
-You also need a .env file in the root folder to store your database credentials.
+You will also have to allow all php dependencies by running:
+
+```bash
+
+composer update
+
+```
+
+In the root project folder to be sure all php modules are installed.
+
+---
+
+Finally, you will need a .env file in the root folder to store your database credentials.
 You can use ".env.template" and fill it with your actual data (don't forget to rename it by removing '.template' in the filename)
 Or you can use this model to see credentials needed and create your own file:
 
