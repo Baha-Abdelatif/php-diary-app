@@ -1,23 +1,34 @@
 <?php readfile(__DIR__ . "/views/header.view.html");
 require_once __DIR__ . "/inc/functions.php";
 require_once __DIR__ . "/inc/db.connect.inc.php";
-if (!empty($_POST["title"]) && !empty($_POST["date"]) && !empty($_POST["message"])) {
+if (!empty($_POST["title"]) && !empty($_POST["date"]) && !empty($_POST["message"]) && !empty($_FILES["image"])) {
   $entered_title = (string) $_POST["title"] ?? "";
   $entered_message = (string) $_POST["message"] ?? "";
   $entered_date = (string) $_POST["date"] ?? "";
-  $stmt = $pdo->prepare('INSERT INTO `entries` (`title`, `message`,`date`) VALUES (:enteredtitle, :enteredmessage, :entereddate)');
+  $entered_image = null;
+
+  require_once __DIR__ . "/inc/img.upload.inc.php";
+
+  $stmt = $pdo->prepare('INSERT INTO `entries` (`title`,`img_url`, `message`,`date`) VALUES (:enteredtitle, :enteredimage,:enteredmessage, :entereddate)');
   $stmt->bindValue('enteredtitle', $entered_title);
+  $stmt->bindValue('enteredimage', $entered_image);
   $stmt->bindValue('enteredmessage', $entered_message);
   $stmt->bindValue('entereddate', $entered_date);
   $stmt->execute();
-}
 
+  echo '<h1>New entry saved!</h1><br/><hr/><br/><a href="index.php"><- Continue to the diary</a>';
+  die();
+}
 ?>
 <h1 class="main-heading">New Entry</h1>
-<form method="POST" action="form.php">
+<form method="POST" action="form.php" enctype="multipart/form-data">
   <div class="form-group">
     <label class="form-group__label" for="title">Title:</label>
     <input required class="form-group__input" type="text" id="title" name="title" />
+  </div>
+  <div class="form-group">
+    <label class="form-group__label" for="image">Image:</label>
+    <input class="form-group__input" type="file" id="image" name="image" />
   </div>
   <div class="form-group">
     <label class="form-group__label" for="date">Date:</label>
