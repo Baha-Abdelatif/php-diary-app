@@ -1,5 +1,5 @@
 .env
 datas.json
 datas.php
-/.vscode
-/vendor
+.vscode/
+vendor/
